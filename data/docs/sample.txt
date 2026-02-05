@@ -1,0 +1,20 @@
+Azure OpenAI Multi-Tool Agent Documentation
+
+This is a sample document for testing the RAG (Retrieval-Augmented Generation) system.
+
+The Azure OpenAI Multi-Tool Agent is an intelligent assistant that can:
+1. Generate professional emails based on user prompts
+2. Summarize text content clearly and concisely
+3. Answer questions from uploaded documents using vector search
+
+The system uses FAISS for vector storage and Azure OpenAI for embeddings and chat completions.
+The architecture includes FastAPI for the backend and Streamlit for the frontend user interface.
+
+Key Technologies:
+- Azure OpenAI (GPT-4o-mini for chat, text-embedding-3-small for embeddings)
+- FAISS for vector similarity search
+- FastAPI for REST API
+- Streamlit for web UI
+- Python 3.12
+
+This agent demonstrates the power of combining multiple AI tools into a single intelligent system.

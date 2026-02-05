@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# FAISS index (optional – can be regenerated)
+vector.index
+chunks.txt
+
+# OS files
+.DS_Store
+
+# Test files
+test_azure.py
