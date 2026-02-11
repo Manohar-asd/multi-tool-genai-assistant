@@ -2,15 +2,14 @@ import os
 import faiss
 import numpy as np
 from pypdf import PdfReader
-from azure_client import client, DEPLOYMENT
+from openai_client import client, MODEL, EMBEDDING_MODEL
 from dotenv import load_dotenv
 
 load_dotenv()
 
-VECTOR_DIM = 1536   # Azure OpenAI embeddings dimension
+VECTOR_DIM = 1536   # OpenAI embeddings dimension
 INDEX_PATH = "vector.index"
 TEXT_PATH = "chunks.txt"
-EMBEDDING_DEPLOYMENT = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT")
 
 def load_documents(folder="data/docs"):
     texts = []
@@ -30,7 +29,7 @@ def load_documents(folder="data/docs"):
 
 def get_embedding(text: str):
     response = client.embeddings.create(
-        model=EMBEDDING_DEPLOYMENT,
+        model=EMBEDDING_MODEL,
         input=text
     )
     return np.array(response.data[0].embedding, dtype="float32")

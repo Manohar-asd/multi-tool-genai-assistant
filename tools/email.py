@@ -1,11 +1,9 @@
-from azure_client import client
+from openai_client import client, MODEL
 import os
-
-deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 
 def generate_email(prompt: str) -> str:
     response = client.chat.completions.create(
-        model=deployment,
+        model=MODEL,
         messages=[
             {"role": "system", "content": "Write a professional email."},
             {"role": "user", "content": prompt}
